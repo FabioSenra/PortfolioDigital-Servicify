@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Servicify Portfólio</title>
+<title>Servicify: Portfólio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -15,7 +15,7 @@ body {font-size:16px;}
 
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Fechar Menu</a>
   <div class="w3-container">
     <h3 class="w3-padding-64"><b>Servicify</b></h3>
   </div>
@@ -23,9 +23,8 @@ body {font-size:16px;}
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
     <a href="#resumo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Resumo</a> 
     <a href="#equipa" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Equipa</a> 
-    <a href="#relatorio" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Relatório</a> 
+    <a href="#conteudo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Conteúdo</a> 
     <a href="#video" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Vídeo</a> 
-    <a href="#demo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Aplicação</a> 
   </div>
 </nav>
 
@@ -44,8 +43,32 @@ body {font-size:16px;}
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
     <h1 class="w3-jumbo"><b>Servicify</b></h1>
-    <h1 class="w3-xxxlarge w3-text-blue"><b>PEI 2020/21</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue"><b>PEI - 2020/21</b></h1>
     <hr style="width:50px;border:5px solid #1876d1" class="w3-round">
+  </div>
+
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="images/1.png" style="width:100%" onclick="onClick(this)" alt="Home Page">
+      <img src="images/2.png" style="width:100%" onclick="onClick(this)" alt="Service Providers">
+      <img src="images/3.png" style="width:100%" onclick="onClick(this)" alt="Service List">
+    </div>
+
+    <div class="w3-half">
+      <img src="images/4.png" style="width:100%" onclick="onClick(this)" alt="Service Calendar">
+      <img src="images/5.png" style="width:100%" onclick="onClick(this)" alt="Service Page">
+      <img src="images/6.png" style="width:100%" onclick="onClick(this)" alt="Evaluation Page">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
   </div>
   
   <!-- Services -->
@@ -67,7 +90,7 @@ body {font-size:16px;}
   <div class="w3-container" id="equipa" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-blue"><b>Equipa</b></h1>
     <hr style="width:50px;border:5px solid #1876d1" class="w3-round">
-    <p>The best team in the world.</p>
+    <p>A melhor equipa no mundo.</p>
     <p>
       Uma equipa altamente motivada com vontade de trabalhar e fazer sempre melhor.
     </p>
@@ -180,10 +203,23 @@ body {font-size:16px;}
   </div> 
   
   <!-- Relatório /-->
-  <div class="w3-container" id="relatorio" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-blue"><b>Relatório</b></h1>
+  <div class="w3-container" id="conteudo" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-blue"><b>Conteúdo</b></h1>
     <hr style="width:50px;border:5px solid #1876d1" class="w3-round">
-    <a href="https://github.com/citoplasme/PEI2020/blob/main/docs/relatorios/relatotio3_entrega_final.pdf">Relatório</a>
+    <ul>
+      <li>
+        <a href="https://github.com/citoplasme/PEI2020/blob/main/docs/relatorios/relatotio3_entrega_final.pdf">Relatório</a>
+      </li>
+      <li>
+        <a href="http://servicify.di.uminho.pt:50300">Aplicação</a>
+      </li>
+      <li>
+        <a href="https://github.com/citoplasme/PEI2020">Repositório do Projeto</a>
+      </li>
+      <li>
+        <a href="https://github.com/citoplasme/PEI2020/blob/main/docs/financeiro/IPMEI_Análise%20Financeira.xls">Análise Económico-Financeira</a>
+      </li>
+    </ul>
   </div>
 
   <!-- Video /-->
@@ -194,19 +230,6 @@ body {font-size:16px;}
     <iframe width="100%" height="700" src="https://www.youtube.com/embed/IeuAR-p5ZDI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 
-  <!-- Demo /-->
-  <div class="w3-container" id="demo" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-blue"><b>Demonstração</b></h1>
-    <hr style="width:50px;border:5px solid #1876d1" class="w3-round">
-    <a href="http://servicify.di.uminho.pt:50300">Aplicação</a>
-  </div>
-
-    <!-- GitHub /-->
-    <div class="w3-container" id="demo" style="margin-top:75px">
-      <h1 class="w3-xxxlarge w3-text-blue"><b>Repositório da aplicação</b></h1>
-      <hr style="width:50px;border:5px solid #1876d1" class="w3-round">
-      <a href="https://github.com/citoplasme/PEI2020">Repositório</a>
-    </div>
 <!-- End page content -->
 </div>
 
